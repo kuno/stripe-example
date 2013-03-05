@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Wilde Things</title>
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div id="container">
+  <h2>Wilde Things</h2>
+  <form action="/charge" method="post">
+    <h3>Sign up to get a new quote every day! Just $400 a month!</h3>
+    <input type="hidden" name="subscription_purchase" value="subscription_purchae" />
+    <input type="text" name="email" placeholder="E-mail address" />
+    <input type="password" name="password" placeholder="Password" />
+    <script src="https://button.stripe.com/v1/button.js" class="stripe-button"
+      data-key="<%= config['publishableKey'] %>"
+      data-amount=40000
+      data-description="Wilde monthly subscription"
+      data-label="Checkout">
+    </script>
+  </form>
+</div><!-- #container -->
+</body>
+</html>
